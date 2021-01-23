@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}"> -->
+    <link rel="stylesheet" href="./styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bridge</title>
+    <style>
+        div.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            bottom: 0;
+            background-color: rgb(0, 0, 0);
+            padding: 2em;
+            width: 100vw;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="chat" id = "chat">
+        <p class="msg"><%= data %></p>
+    </div>
+
+    <div class="sticky">
+        <form id = "form" action="">
+            <input id = "input" type="text" class="input-field" placeholder="Type A Message">
+            <button type="submit" class="send"><b>SEND</b></button>
+        </form>
+    </div>
+
+    <script>
+
+    </script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+      var input = document.getElementById('input');
+      var messages = document.getElementById('chat');
+      var form = document.getElementById('form');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (input.value) {
+            socket.emit('chat message', input.value);
+            input.value = '';
+        }
+    }); 
+    
+    socket.on('chat message', function (msg) {
+        var item = document.createElement('p');
+        item.className = 'msg'
+        item.textContent = msg;
+        messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+    });
+</script>
+
+</body>
+
+</html>

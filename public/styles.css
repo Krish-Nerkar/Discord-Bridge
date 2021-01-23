@@ -1,0 +1,39 @@
+html, body {
+  background-color: #222222;
+  color: #ffffff;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  /* Hide vertical scrollbar */
+}
+
+.chat {
+  width: 100vw;
+  /* height: 100vh; */
+}
+
+.msg {
+  font-size: 1.3em;
+  margin-left: 1em;
+  margin-top: 2em;
+}
+
+.input-field {
+  width: 50vw;
+  height: 2em;
+  margin-left: 1em;
+  padding: 0.4em 0.8em;
+  background-color: #222222;
+  border: none;
+  border-radius: 0.3em;
+  color: #ffffff;
+}
+
+.send {
+  height: 3em;
+  background-color: yellow;
+  border-radius: 0.3em;
+  border: none;
+  font-style: bold;
+  width: 5em;
+}
+/*# sourceMappingURL=style.css.map */
