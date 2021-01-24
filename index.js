@@ -18,8 +18,7 @@ client.on("message", function(message) {
 }); 
 
 const url = "https://discord.com/api/v8/channels/801784356711956522/messages"
-// const auth = "NTY5ODI4MjkwMjUzMTYwNDQ5.YAarfw.hhhWAWBa9EjYT_Tarqs141CIKkA"
-const auth = "NTY5ODI4MjkwMjUzMTYwNDQ5.YA0KoQ.vCHzzrtBix5bjR3YFf_P3A6Lplg"
+const auth = ""
              
 const headers = {"Authorization": auth,
                "Content-Type": 'application/json', 'referer': "https://discord.com/channels/801784356217421874/801784356711956522"}
